@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ondo Pasa - Photographies du Pays Basque</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f0e6;
+      color: #333;
+    }
+    header {
+      background-color: #ffffffcc;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      font-size: 24px;
+      color: #6b4f3b;
+    }
+    nav {
+      margin-top: 5px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #6b4f3b;
+      font-weight: bold;
+    }
+    .slideshow {
+      margin-top: 100px;
+      height: 70vh;
+      width: 100%;
+      overflow: hidden;
+    }
+    .slideshow img {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+      top: 100px;
+      left: 0;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    footer {
+      background: #eee;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+    .photo-apropos {
+      width: 150px;  /* Taille de la photo */
+      height: 150px; /* Taille de la photo */
+      border-radius: 50%; /* Rendre l'image ronde */
+      object-fit: cover; /* S'assurer que l'image garde ses proportions sans être étirée */
+      margin-bottom: 20px; /* Espace sous la photo */
+      border: 3px solid #6b4f3b; /* Bordure autour de la photo */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ondo Pasa</h1>
+    <nav>
+      <a href="#galerie">Galerie</a>
+      <a href="#goodies">Goodies</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="slideshow">
+    <img src="img1.jpg" style="opacity:1">
+    <img src="img2.jpg" style="opacity:0">
+    <img src="img3.jpg" style="opacity:0">
+    <img src="img4.jpg" style="opacity:0">
+    <img src="img5.jpg" style="opacity:0">
+    <img src="img6.jpg" style="opacity:0">
+    <img src="img7.jpg" style="opacity:0">
+  </div>
+
+  <div id="galerie" class="section">
+    <h2>Galerie</h2>
+    <p>Découvrez mes photos du Pays Basque disponibles à la vente sur toile.</p>
+  </div>
+
+  <div id="goodies" class="section">
+    <h2>Goodies</h2>
+    <p>Tasses, plaids, coussins et plus encore avec mes clichés imprimés !</p>
+  </div>
+
+  <div id="apropos" class="section">
+    <h2>À propos</h2>
+    <img src="photo.jpg" alt="Photo d'Angélique" class="photo-apropos">
+    <p>Bienvenue sur Ondo Pasa, un voyage au cœur du Pays Basque à travers mon regard.</p>
+    <p>Je m’appelle Angélique, amoureuse du Pays Basque où j’ai grandi, et passionnée par la photographie de paysages. Mon appareil photo est mon moyen de capturer l’âme de cette région : ses montagnes, ses villages typiques, ses lumières changeantes et son atmosphère unique.</p>
+    <p>Ondo Pasa, qui signifie “profite bien” en basque, est une invitation à ralentir, à contempler, à ressentir la beauté simple qui nous entoure. Chaque photo est prise avec intention et émotion, dans le but de transmettre une ambiance, une sensation… une histoire.</p>
+    <p>Je propose ici mes clichés en impression sur toile, mais aussi sur des objets du quotidien pour faire entrer un peu de poésie basque dans votre intérieur.</p>
+    <p>Merci de faire partie de ce voyage avec moi.</p>
+  </div>
+
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Pour toute demande ou commande personnalisée, vous pouvez me contacter ici.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Ondo Pasa. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    let slides = document.querySelectorAll('.slideshow img');
+    let current = 0;
+    setInterval(() => {
+      slides[current].style.opacity = 0;
+      current = (current + 1) % slides.length;
+      slides[current].style.opacity = 1;
+    }, 60000); // Changement toutes les 60 secondes (1 minute)
+  </script>
+</body>
+</html>
